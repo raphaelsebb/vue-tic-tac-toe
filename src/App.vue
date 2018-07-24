@@ -1,24 +1,45 @@
 <template>
-  <div id="app">
-    <div id="details">
-      <h1>Tic Tac Toe</h1>
+    <div class="">
+        <div class="scoreBoard">
+            <span>O has {{ wins.O }} wins</span>
+            <h2>Score Board</h2>
+            <span>X has {{ wins.X }} wins</span>
+        </div>
+        <div id="app">
+          <div id="details">
+            <h1>Tic Tac Toe</h1>
+            <h2>Match #{{ matches + 1 }}</h2>
+          </div>
+          <grid></grid>
+          <button class="restart" @click="restart">Restart</button>
+        </div>
     </div>
-    <grid></grid>
-  </div>
 </template>
 
 <script>
 export default {
   name: 'app',
-  data () {
-    return {
-      matches: 0,
-      wins: {
-        o: 0,
-        x: 0
+      data () {
+        return {
+          matches: 0,
+          wins: {
+            O: 0,
+            X: 0
+          }
+        }
+      },
+      created () {
+          Event.$on('win', winner => this.wins[winner]++)
+      },
+      methods: {
+          restart () {
+              Event.$emit('clearCell')
+
+              Event.$emit('gridReset')
+
+              this.matches++
+            }
       }
-    }
-  }
 }
 </script>
 
