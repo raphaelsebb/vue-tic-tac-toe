@@ -7,6 +7,10 @@ export default {
     name: 'cell',
     data () {
         return {
+            // enables the player to place a mark
+            frozen: false,
+
+            // holds either X or O to be displayed in the td
             mark: ''
         }
     }
