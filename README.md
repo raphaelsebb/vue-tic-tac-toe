@@ -15,7 +15,7 @@ Build a Tic-Tac-Toe Game using Vue.js
 
 In this tutorial, we are going to build a simple tic-tac-toe game with the Vue framework. Tic-Tac-Toe is a two-players pencil and paper game. One player is Cross 'X' and the other one is Nought 'O'. The game is based on a 3x3 grid with each box in the grid having the space to be marked with either X or O. One move consists of one mark. The game is turn-based meaning that players own a move one after the other. Once a mark has been placed, it cannot be altered. So, who wins the game? The one who is able to place 3 consecutive Xs or Os in a line. The line can be vertical, horizontal or diagonal. And to get acquainted with it, search Google for tic-tac-toe and play it the times until you don't want to any longer.
 
-## Build Setup
+## Install and setup
 
 ``` bash
 # download or clone repository
