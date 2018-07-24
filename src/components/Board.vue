@@ -60,6 +60,7 @@ export default {
         // changes the active player to the non-active player with the help of the nonActivePlayer computed property
         changePlayer () {
             this.activePlayer = this.nonActivePlayer
+            this.gameStatusMessage = `${this.activePlayer}'s turn`
         },
         changeGameStatus () {
             if (this.checkForWin()) {
@@ -131,7 +132,7 @@ export default {
             if (this.gameStatus === 'win') {
                 this.gameStatusColor = 'statusWin'
 
-                this.gameStatusMessage = `${this.activePlayer} Wins !`
+                this.gameStatusMessage = `${this.nonActivePlayer} Wins !`
 
                 return
             } else if (this.gameStatus === 'draw') {
@@ -141,8 +142,6 @@ export default {
 
                 return
             }
-
-            this.gameStatusMessage = `${this.activePlayer}'s turn`
         }
     },
     created () {
